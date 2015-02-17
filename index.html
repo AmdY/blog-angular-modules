@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" ng-app="appModule">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/modules/auth.js"></script>
+    <script src="/app/app.js"></script>
+</head>
+<body>
+<div ng-controller="MainController">
+    <a href="#/">Main</a>
+    <a href="#/public">Public</a>
+    <a href="#/admin">Admin</a>
+    <hr>
+    <div ng-view></div>
+    <hr>
+    <p ng-show="userService.isLogged">You are logged as {{ userService.user.login }}.
+        <button ng-click="logout()">Logout</button>
+    </p>
+</div>
+
+</body>
+
+</html>
